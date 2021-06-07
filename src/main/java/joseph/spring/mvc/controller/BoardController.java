@@ -7,15 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BoardController {
 
     @GetMapping("/board/list")
-    public String agree(){
+    public String list() {
         return "board/list.tiles";
     }
+
     @GetMapping("/board/view")
-    public String agree(){
-        return "board/list.tiles";
+    public String view() {
+        return "board/view.tiles";
     }
+
     @GetMapping("/board/write")
-    public String agree(){
-        return "board/list.tiles";
+    public String write() {
+        return "board/write.tiles";
     }
+
 }

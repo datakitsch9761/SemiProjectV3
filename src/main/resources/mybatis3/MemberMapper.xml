@@ -25,10 +25,11 @@
         where userid = #{userid}
     </select>
 
-    <select id="checkLogin" statementType="PREPARED"
-    parameterType="joseph.spring.mvc.vo.Member" resultType="int">
-        select count(userid) cnt from joinMember
-        where userid = #{userid} and passwd = #{passwd}
+    <select id="selectBoard" statementType="PREPARED"
+    parameterType="int"
+    resultType="joseph.spring.mvc.vo.Board">
+        select bdno,title,userid,regdate,views,thumbup from board
+        order by bdno desc limit #{snum}, 30
     </select>
 
 </mapper>

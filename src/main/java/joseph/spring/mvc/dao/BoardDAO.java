@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 public interface BoardDAO {
-    boolean insertBoard(Board b);
-    boolean updateBoard(Board b);
-    boolean deleteBoard(String bdno);
 
+    int insertBoard(Board b);
+    int updateBoard(Board b);
+    int deleteBoard(String bdno);
 
     List<Board> selectBoard(int snum);
     List<Board> findSelectBoard(Map<String, Object> param);
@@ -17,5 +17,6 @@ public interface BoardDAO {
 
     int selectCountBoard();
     int selectCountBoard(Map<String, Object> param);
-    boolean viewCountBoard(String bdno);
+    int viewCountBoard(String bdno);
+
 }

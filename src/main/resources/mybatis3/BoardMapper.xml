@@ -4,7 +4,7 @@
 
     <select id="selectBoard" statementType="PREPARED"
             parameterType="int"
-            resultType="siestageek.spring.mvc.vo.Board">
+            resultType="joseph.spring.mvc.vo.Board">
         select bdno, title, userid, regdate, views, thumbup from board
         order by bdno desc limit #{snum}, 30
     </select>
@@ -15,14 +15,14 @@
     </select>
 
     <insert id="insertBoard" statementType="PREPARED"
-            parameterType="siestageek.spring.mvc.vo.Board">
+            parameterType="joseph.spring.mvc.vo.Board">
         insert into board (title, userid, contents)
         values (#{title}, #{userid}, #{contents})
     </insert>
 
     <select id="selectOne" statementType="PREPARED"
             parameterType="String"
-            resultType="siestageek.spring.mvc.vo.Board">
+            resultType="joseph.spring.mvc.vo.Board">
         select * from board where bdno = #{bdno}
     </select>
 
@@ -35,7 +35,7 @@
     <!-- 단, 컬럼명이나 테이블명에는 #{}가 아닌 ${}를 사용! -->
     <select id="findSelect" statementType="PREPARED"
             parameterType="map"
-            resultType="siestageek.spring.mvc.vo.Board">
+            resultType="joseph.spring.mvc.vo.Board">
         select bdno, title, userid, regdate, views, thumbup from board
         <if test="ftype != 'titcont'">
             where ${ftype} like concat(#{fkey}, '%') </if>
